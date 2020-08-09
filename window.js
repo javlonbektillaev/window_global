@@ -24,7 +24,10 @@ class Window1 {
         this.width = options.width
 
         this.button.addEventListener('click', () => this.window2())
-        this.close.addEventListener('click', () => location.reload())
+        this.close.addEventListener('click', () => {
+            this.menu.style.left='-100%'
+            this.menu.style.transition='1s'
+        })
     }
     window2() {
         this.menu.style.left = '0%'
@@ -40,6 +43,6 @@ const window1 = new Window1({
     button : 'button',
     headerMenu: '.header__menu',
     close,
-    width: 100,
+    width: 50,
     unit: '%'
 })
